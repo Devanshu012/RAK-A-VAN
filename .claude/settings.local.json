@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Rename-Item -Path \"c:\\\\Users\\\\devan\\\\Desktop\\\\rakavan-nextjs\\\\rakavan\\\\public\\\\hero-van.jpg\" -NewName \"hero-van\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('gsap'\\); console.log\\('GSAP OK:', require\\('gsap/package.json'\\).version\\)\")",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
