@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, Phone, Plus } from 'lucide-react'
+import { ArrowUpRight, Phone, Plus, Mail, MapPin } from 'lucide-react'
 import GSAPReveal from '@/components/ui/GSAPReveal'
 import GSAPStagger from '@/components/ui/GSAPStagger'
+import EnquiryForm from '@/components/ui/EnquiryForm'
 
 const PRODUCTS = [
   {
@@ -55,11 +56,11 @@ const PRODUCTS = [
 export default function Products() {
   return (
     <section className="bg-transparent py-14 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         <GSAPReveal>
           <div className="flex flex-col items-center gap-6 mb-14">
-            <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em] text-center whitespace-nowrap">
+            <h2 className="text-[28px] sm:text-[38px] lg:text-[58px] font-bold text-gray-900 leading-[1.1] tracking-[-0.025em] text-center">
               Everything You Need for <span className="text-red-600">Your Van</span>
             </h2>
             <Link href="/shop" className="btn-ghost">
@@ -121,16 +122,17 @@ export default function Products() {
           ))}
 
           {/* Helper card */}
-          <div className="flex flex-col md:flex-row items-center gap-6 p-7 md:p-10 bg-red-50 rounded-2xl border border-red-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="flex flex-col md:flex-row items-center gap-6 p-6 sm:p-7 md:p-10 bg-red-50 rounded-2xl border border-red-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center text-3xl shrink-0">🤔</div>
             <div className="flex-1 text-center md:text-left">
               <h3 className="font-semibold text-[16px] text-gray-900 mb-1">Not sure what fits your van?</h3>
               <p className="text-[13px] text-gray-500 leading-relaxed">Call us and our team will recommend the perfect setup for your trade and vehicle — free advice, no pressure.</p>
             </div>
-            <a href="tel:1300044145" className="btn-grad shrink-0 text-[13px] py-3 px-5">
+            <Link href="/contact#enquiry" className="btn-grad shrink-0 text-[13px] py-3 px-5 w-full md:w-auto justify-center">
               <Phone size={14} /> Call Us Free
-            </a>
+            </Link>
           </div>
+
         </GSAPStagger>
 
       </div>

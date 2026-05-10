@@ -14,11 +14,11 @@ const VALUES = [
 export default function Values() {
   return (
     <section className="bg-transparent py-14 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         <GSAPReveal>
           <div className="flex flex-col items-center mb-14">
-            <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em] text-center whitespace-nowrap">
+            <h2 className="text-[26px] sm:text-[38px] lg:text-[58px] font-bold text-gray-900 leading-[1.1] tracking-[-0.025em] text-center">
               Why 10,000+ Tradies Trust Us
             </h2>
           </div>

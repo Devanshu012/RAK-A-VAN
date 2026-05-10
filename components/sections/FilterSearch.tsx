@@ -182,12 +182,12 @@ export default function FilterSearch() {
 
   return (
     <section className="bg-transparent py-12 lg:py-16">
-      <div className="max-w-6xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         {/* ── header ── */}
         <GSAPReveal>
           <div className="text-center mb-14">
-            <h2 className="text-[38px] lg:text-[54px] font-bold text-gray-900 leading-[1.05] tracking-[-0.03em] mb-4">
+            <h2 className="text-[28px] sm:text-[38px] lg:text-[54px] font-bold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-4">
               Find Your Perfect
               <span className="text-red-600"> Van Setup</span>
             </h2>
@@ -196,7 +196,7 @@ export default function FilterSearch() {
 
         {/* ── 3 cards ── */}
         <GSAPReveal delay={0.1}>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
 
             {/* BY VEHICLE */}
             <FilterCard
@@ -309,7 +309,7 @@ export default function FilterSearch() {
               />
             </button>
 
-            <p className={`text-[12px] font-medium transition-all duration-300 ${hasSelection ? 'text-red-400' : 'text-gray-300'}`}>
+            <p className={`text-[12px] font-medium transition-all duration-300 ${hasSelection ? 'text-red-400' : 'text-red-500'}`}>
               {hasSelection
                 ? `${[make, trade, product].filter(Boolean).length} filter${[make, trade, product].filter(Boolean).length > 1 ? 's' : ''} selected — ready to search`
                 : 'Select at least one option above to search'

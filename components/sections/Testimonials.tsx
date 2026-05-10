@@ -32,12 +32,12 @@ export default function Testimonials() {
 
   return (
     <section className="bg-transparent py-14 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         <GSAPReveal>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
             <div>
-              <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em]">
+              <h2 className="text-[30px] sm:text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.05] tracking-[-0.025em]">
                 What They&apos;re<br />Saying
               </h2>
             </div>
@@ -49,7 +49,7 @@ export default function Testimonials() {
 
         {/* Featured large quote */}
         <GSAPReveal y={30} className="mb-5">
-          <div className="relative bg-[#F5F5F5] rounded-2xl border border-[#EAEAEA] p-8 lg:p-12 overflow-hidden">
+          <div className="relative bg-[#F5F5F5] rounded-2xl border border-[#EAEAEA] p-6 sm:p-8 lg:p-12 overflow-hidden">
             {/* Decorative large quote mark */}
             <span
               aria-hidden
@@ -60,7 +60,7 @@ export default function Testimonials() {
 
             <div className="relative max-w-3xl">
               <Stars count={featured.stars} />
-              <p className="text-[18px] lg:text-[22px] text-gray-700 leading-[1.6] italic mt-5 mb-7">
+              <p className="text-[15px] sm:text-[18px] lg:text-[22px] text-gray-700 leading-[1.6] italic mt-5 mb-7">
                 &ldquo;{featured.text}&rdquo;
               </p>
               <div className="flex items-center gap-3">

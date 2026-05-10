@@ -19,24 +19,24 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-20 border-b border-[#E8E6E1]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20 border-b border-[#E8E6E1]">
+        <div className="w-full px-5">
           <div className="section-divider"><span className="num">001</span><span className="line" /><span className="label">About Us</span></div>
-          <h1 className="font-serif text-[72px] leading-none text-c-text mb-6">
+          <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-[72px] leading-[1.05] text-c-text mb-6">
             Australia's First<br /><em className="not-italic text-c-accent">Van Shelving</em> Company
           </h1>
-          <p className="text-[16px] text-c-muted max-w-xl leading-relaxed">
+          <p className="text-[14px] sm:text-[16px] text-c-muted max-w-xl leading-relaxed">
             Since 2012, RAK A VAN has been the go-to choice for Australian tradespeople who demand professional, durable and adaptable van storage. We didn't just enter the market — we created it.
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="bg-[#F8F7F4] py-20">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+      <section className="bg-[#F8F7F4] py-14 sm:py-20">
+        <div className="w-full px-5 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div>
             <div className="section-divider"><span className="num">002</span><span className="line" /><span className="label">Our Story</span></div>
-            <h2 className="font-serif text-4xl text-c-text mb-6 leading-tight">Born from a tradie's need</h2>
+            <h2 className="font-serif text-[28px] sm:text-4xl text-c-text mb-6 leading-tight">Born from a tradie's need</h2>
             <div className="flex flex-col gap-4 text-[14px] text-c-muted leading-relaxed">
               <p>RAK A VAN was founded with a simple mission: give Australian tradespeople the van storage system they actually need. Before us, there was no dedicated solution built for the rigours of Australian trade work.</p>
               <p>Our unique modular design and extensive range of van shelving, van racking and accessories allow us to offer an endless variety of efficient, fully adaptable storage solutions for any type of trade and any type of vehicle.</p>
@@ -66,16 +66,16 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20">
+        <div className="w-full px-5">
           <div className="section-divider"><span className="num">003</span><span className="line" /><span className="label">Our Journey</span></div>
-          <h2 className="font-serif text-4xl text-c-text mb-10">12+ Years of Innovation</h2>
+          <h2 className="font-serif text-[28px] sm:text-4xl text-c-text mb-8 sm:mb-10">12+ Years of Innovation</h2>
           <div className="flex flex-col gap-3">
             {MILESTONES.map(m => (
-              <div key={m.year} className="c-card bg-[#F8F7F4] flex items-center gap-8 border-[#E8E6E1]">
-                <span className="font-serif text-4xl text-c-accent shrink-0 w-20">{m.year}</span>
+              <div key={m.year} className="c-card bg-[#F8F7F4] flex items-center gap-4 sm:gap-8 border-[#E8E6E1]">
+                <span className="font-serif text-[28px] sm:text-4xl text-c-accent shrink-0 w-14 sm:w-20">{m.year}</span>
                 <div className="w-px h-10 bg-[#E8E6E1] shrink-0" />
-                <p className="text-[14px] text-c-muted">{m.text}</p>
+                <p className="text-[13px] sm:text-[14px] text-c-muted">{m.text}</p>
               </div>
             ))}
           </div>
@@ -83,13 +83,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#0D0D0D] py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-5xl text-white mb-4">Ready to Get Organised?</h2>
+      <section className="bg-[#0D0D0D] py-14 sm:py-20">
+        <div className="w-full px-5 text-center">
+          <h2 className="font-serif text-[32px] sm:text-5xl text-white mb-4">Ready to Get Organised?</h2>
           <p className="text-[#6B6860] mb-8">Join thousands of Australian tradies who trust RAK A VAN.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/shop" className="btn-primary">Shop Now <ArrowUpRight size={15} /></Link>
-            <Link href="/contact" className="flex items-center gap-2 px-6 py-3 rounded-pill border border-[#3a3a3a] text-white text-sm font-medium hover:border-[#666] transition-colors">Get in Touch</Link>
+            <Link href="/contact" className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#3a3a3a] text-white text-sm font-medium hover:border-[#666] transition-colors min-h-[44px]">Get in Touch</Link>
           </div>
         </div>
       </section>

@@ -58,7 +58,7 @@ export default function Navbar() {
       className="sticky top-0 z-50 bg-white border-b border-[#EAEAEA]"
       style={{ backdropFilter: 'blur(12px)' }}
     >
-      <div className="w-full px-8 xl:px-14 h-16 flex items-center justify-between gap-8">
+      <div className="w-full px-5 h-16 flex items-center justify-between gap-8">
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
@@ -126,7 +126,7 @@ export default function Navbar() {
       {/* Mobile drawer */}
       {open && (
         <div className="lg:hidden border-t border-[#EAEAEA] bg-white">
-          <nav className="w-full px-8 py-4 flex flex-col gap-1">
+          <nav className="w-full px-5 py-4 flex flex-col gap-1">
             {NAV.map(link => (
               <div key={link.label}>
                 <Link href={link.href} onClick={() => setOpen(false)}

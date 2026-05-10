@@ -25,7 +25,7 @@ const LINKS = {
 export default function Footer() {
   return (
     <footer className="bg-[#F5F5F5] border-t border-[#EAEAEA]">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10 py-16 lg:py-20">
+      <div className="w-full px-5 py-16 lg:py-20">
 
         {/* Links grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">

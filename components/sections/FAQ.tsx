@@ -16,8 +16,8 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-white py-14 sm:py-24">
+      <div className="w-full px-5">
 
         <div className="section-divider">
           <span className="num">007</span>
@@ -25,10 +25,10 @@ export default function FAQ() {
           <span className="label">FAQs</span>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16">
           {/* Left */}
           <div>
-            <h2 className="font-serif text-5xl text-c-text leading-tight mb-4">Common Questions</h2>
+            <h2 className="font-serif text-[30px] sm:text-[40px] lg:text-5xl text-c-text leading-tight mb-4">Common Questions</h2>
             <p className="text-[14px] text-c-muted leading-relaxed mb-8">
               Can't find what you're looking for? Call us directly — our team knows the products inside out.
             </p>

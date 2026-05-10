@@ -25,31 +25,31 @@ const CATS = [
 export default function ShopPage() {
   return (
     <>
-      <section className="bg-white py-20 border-b border-[#E8E6E1]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20 border-b border-[#E8E6E1]">
+        <div className="w-full px-5">
           <div className="section-divider"><span className="num">001</span><span className="line" /><span className="label">Shop</span></div>
-          <h1 className="font-serif text-[72px] leading-none text-c-text mb-4">Our Full Range</h1>
-          <p className="text-[15px] text-c-muted max-w-md">Complete van storage solutions for every trade. Nationwide shipping across Australia.</p>
+          <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-[72px] leading-[1.05] text-c-text mb-4">Our Full Range</h1>
+          <p className="text-[14px] sm:text-[15px] text-c-muted max-w-md">Complete van storage solutions for every trade. Nationwide shipping across Australia.</p>
         </div>
       </section>
 
       <section className="bg-[#F8F7F4] py-16">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-4">
+        <div className="w-full px-5 flex flex-col gap-4">
           {CATS.map(cat => (
-            <div key={cat.title} className="c-card bg-white flex flex-col md:flex-row gap-6">
-              <div className="w-full md:w-40 h-36 rounded-xl flex items-center justify-center text-6xl shrink-0" style={{ background: cat.bg }}>
+            <div key={cat.title} className="c-card bg-white flex flex-col sm:flex-row gap-5 sm:gap-6">
+              <div className="w-full sm:w-40 h-28 sm:h-36 rounded-xl flex items-center justify-center text-5xl shrink-0" style={{ background: cat.bg }}>
                 {cat.emoji}
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="tag-accent">{cat.badge}</span>
                 </div>
-                <h2 className="font-serif text-3xl text-c-text mb-2">{cat.title}</h2>
-                <p className="text-[14px] text-c-muted mb-4 leading-relaxed">{cat.desc}</p>
+                <h2 className="font-serif text-[24px] sm:text-3xl text-c-text mb-2">{cat.title}</h2>
+                <p className="text-[13px] sm:text-[14px] text-c-muted mb-4 leading-relaxed">{cat.desc}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {cat.subs.map(s => <span key={s} className="tag">{s}</span>)}
                 </div>
-                <Link href={cat.href} className="btn-primary inline-flex">
+                <Link href={cat.href} className="btn-primary inline-flex w-full sm:w-auto justify-center sm:justify-start">
                   Shop {cat.title} <ArrowUpRight size={14} />
                 </Link>
               </div>

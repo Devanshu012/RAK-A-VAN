@@ -55,9 +55,9 @@ export default function ShowcaseImage() {
 
   return (
     <section className="bg-transparent py-14 lg:py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
-        <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em] text-center mb-10">
+        <h2 className="text-[28px] sm:text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.05] tracking-[-0.025em] text-center mb-8 sm:mb-10">
           The Big Announcement
         </h2>
 

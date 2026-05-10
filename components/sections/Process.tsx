@@ -63,11 +63,11 @@ export default function Process() {
 
   return (
     <section className="bg-transparent py-14 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         <GSAPReveal>
           <div className="flex flex-col items-center mb-16 lg:mb-20">
-            <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em] text-center whitespace-nowrap">
+            <h2 className="text-[28px] sm:text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.05] tracking-[-0.025em] text-center">
               From Order to Organised
             </h2>
           </div>
@@ -97,17 +97,18 @@ export default function Process() {
         {/* Mobile vertical timeline */}
         <div className="lg:hidden flex flex-col mb-12">
           {STEPS.map((step, i) => (
-            <div key={step.n} className="flex gap-5">
+            <div key={step.n} className="flex gap-4">
               <div className="flex flex-col items-center shrink-0">
-                <div className="w-10 h-10 rounded-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center shadow-[0_0_0_3px_#F5F5F5,0_0_0_6px_rgba(220,38,38,0.2)]">
+                <div className="w-9 h-9 rounded-full bg-red-600 text-white font-bold text-[12px] flex items-center justify-center shadow-[0_0_0_3px_#F5F5F5,0_0_0_6px_rgba(220,38,38,0.2)]">
                   {step.n}
                 </div>
                 {i < STEPS.length - 1 && <div className="w-px flex-1 bg-gray-200 my-2 min-h-[32px]" />}
               </div>
-              <div className="pb-8 mt-1">
-                <button className="px-5 py-2.5 rounded-full bg-red-600 text-white font-semibold text-[15px] shadow-md hover:bg-red-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer whitespace-nowrap">
+              <div className="pb-8 mt-1 flex-1 min-w-0">
+                <p className="px-4 py-2.5 rounded-full bg-red-600 text-white font-semibold text-[14px] shadow-md inline-block">
                   {step.title}
-                </button>
+                </p>
+                <p className="text-[12px] text-gray-400 leading-relaxed mt-2 pr-2">{step.desc}</p>
               </div>
             </div>
           ))}

@@ -45,12 +45,12 @@ export default function Hero() {
   return (
     <section ref={sectionRef} className="relative bg-white overflow-hidden">
 
-      <div className="relative max-w-7xl mx-auto px-6 xl:px-10 pt-6 lg:pt-8">
+      <div className="relative w-full px-5 pt-6 lg:pt-8">
 
         {/* ── HERO BANNER ── */}
         <div
           className="h-image relative w-full rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.18),0_0_0_1px_rgba(0,0,0,0.05)]"
-          style={{ minHeight: 'clamp(500px, 68vh, 720px)', opacity: 0 }}
+          style={{ minHeight: 'clamp(400px, 68vh, 720px)', opacity: 0 }}
         >
           {/* Background image — parallax target, scaled up to absorb movement */}
           <div ref={imageRef} className="absolute inset-0 scale-[1.1]">
@@ -72,7 +72,7 @@ export default function Hero() {
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/10 to-transparent" />
 
           {/* Content layer — fills full banner height */}
-          <div className="absolute inset-0 flex flex-col justify-between p-7 sm:p-10 lg:p-12">
+          <div className="absolute inset-0 flex flex-col justify-between p-5 sm:p-10 lg:p-12">
 
             {/* TOP ROW — headline + Est. badge */}
             <div className="flex items-start justify-between gap-4">
@@ -137,7 +137,7 @@ export default function Hero() {
             { end: 12,  suffix: '+',  label: 'Years trusted' },
             { end: 100, suffix: '%',  label: 'Australian' },
           ].map(s => (
-            <div key={s.label} className="h-stat flex flex-col items-center gap-1.5 px-8 lg:px-14 first:pl-0" style={{ opacity: 0 }}>
+            <div key={s.label} className="h-stat flex flex-col items-center gap-1.5 px-4 sm:px-8 lg:px-14 first:pl-0" style={{ opacity: 0 }}>
               <span className="text-[32px] font-bold text-red-600 leading-none tracking-tight">
                 <AnimatedCounter end={s.end} suffix={s.suffix} />
               </span>

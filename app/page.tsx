@@ -3,6 +3,7 @@ import FilterSearch   from '@/components/sections/FilterSearch'
 import Products       from '@/components/sections/Products'
 import Process        from '@/components/sections/Process'
 import Values         from '@/components/sections/Values'
+import BeforeAfter    from '@/components/sections/BeforeAfter'
 import ShowcaseImage  from '@/components/sections/ShowcaseImage'
 import Testimonials   from '@/components/sections/Testimonials'
 import CaseStudies    from '@/components/sections/CaseStudies'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Products />
       <Process />
       <Values />
+      <BeforeAfter />
       <ShowcaseImage />
       <Testimonials />
       <CaseStudies />

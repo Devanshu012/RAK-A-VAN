@@ -37,12 +37,12 @@ const SETUPS = [
 export default function CaseStudies() {
   return (
     <section className="bg-transparent py-14 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
 
         <GSAPReveal>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
             <div>
-              <h2 className="text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.0] tracking-[-0.025em]">
+              <h2 className="text-[30px] sm:text-[42px] lg:text-[58px] font-bold text-gray-900 leading-[1.05] tracking-[-0.025em]">
                 Featured<br />Van Setups
               </h2>
             </div>

@@ -5,9 +5,9 @@ import GSAPReveal from '@/components/ui/GSAPReveal'
 export default function CTABanner() {
   return (
     <section className="bg-transparent py-10 lg:py-14">
-      <div className="max-w-7xl mx-auto px-6 xl:px-10">
+      <div className="w-full px-5">
         <GSAPReveal y={30}>
-          <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-10 lg:px-20 py-16 lg:py-24 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-24 text-center">
 
             {/* Ambient glow */}
             <div aria-hidden className="pointer-events-none absolute inset-0"
@@ -25,7 +25,7 @@ export default function CTABanner() {
                 Your Competitors Are Already Organised
               </p>
 
-              <h2 className="font-bold text-[48px] lg:text-[68px] text-white leading-[0.95] tracking-[-0.03em] mb-5">
+              <h2 className="font-bold text-[36px] sm:text-[48px] lg:text-[68px] text-white leading-[0.95] tracking-[-0.03em] mb-5">
                 RAK Your Van<br />
                 <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
                   Today
@@ -47,9 +47,9 @@ export default function CTABanner() {
               </div>
 
               {/* Trust strip */}
-              <div className="flex flex-wrap justify-center items-center gap-6 mt-10 pt-10 border-t border-white/[0.08]">
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-white/[0.08]">
                 {['10K+ Vans Fitted', 'Est. 2012', '100% Australian', 'Nationwide Delivery', 'Free Fitting Instructions'].map(item => (
-                  <span key={item} className="text-[12px] font-medium text-white/30 tracking-wide">{item}</span>
+                  <span key={item} className="text-[11px] sm:text-[12px] font-medium text-white/30 tracking-wide">{item}</span>
                 ))}
               </div>
             </div>
