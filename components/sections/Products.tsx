@@ -69,7 +69,58 @@ export default function Products() {
           </div>
         </GSAPReveal>
 
-        <GSAPStagger className="flex flex-col gap-4" stagger={0.09}>
+        {/* ── Mobile: horizontal scroll  |  md+: vertical stack ── */}
+        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
+          <div className="flex flex-row gap-4 w-max">
+            {PRODUCTS.map(p => (
+              <Link
+                key={p.title}
+                href={p.href}
+                style={{ scrollSnapAlign: 'start', width: 'min(78vw, 320px)' }}
+                className="group flex flex-col bg-white rounded-2xl border border-[#EAEAEA] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0"
+              >
+                {/* Image */}
+                <div className="relative w-full h-44 overflow-hidden" style={{ background: '#F5F5F5' }}>
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="80vw"
+                  />
+                </div>
+
+                {/* Accent bar */}
+                <div className="h-[3px] w-full shrink-0" style={{ background: p.accent }} />
+
+                {/* Content */}
+                <div className="flex flex-col justify-between gap-4 p-5 flex-1">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-bold text-[18px] text-gray-900 group-hover:text-red-600 transition-colors leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="text-[12px] text-gray-500 leading-relaxed line-clamp-3">{p.desc}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {p.tags.slice(0, 3).map(tag => (
+                      <span key={tag} className={`px-2.5 py-1 rounded-full border text-[11px] font-semibold ${p.tagBg}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-1.5 text-[12px] font-semibold text-red-600 pt-3 border-t border-[#F5F5F5]">
+                    View Range <ArrowUpRight size={12} />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ── md+: original vertical stack ── */}
+        <GSAPStagger className="hidden md:flex flex-col gap-4" stagger={0.09}>
           {PRODUCTS.map(p => (
             <Link
               key={p.title}
@@ -83,7 +134,7 @@ export default function Products() {
                   alt={p.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 60vw"
+                  sizes="60vw"
                 />
               </div>
 
@@ -99,13 +150,9 @@ export default function Products() {
                   <p className="text-[13px] text-gray-500 leading-relaxed">{p.desc}</p>
                 </div>
 
-                {/* Tag pills */}
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className={`px-3 py-1.5 rounded-full border text-[12px] font-semibold ${p.tagBg}`}
-                    >
+                    <span key={tag} className={`px-3 py-1.5 rounded-full border text-[12px] font-semibold ${p.tagBg}`}>
                       {tag}
                     </span>
                   ))}
@@ -120,20 +167,19 @@ export default function Products() {
               </div>
             </Link>
           ))}
-
-          {/* Helper card */}
-          <div className="flex flex-col md:flex-row items-center gap-6 p-6 sm:p-7 md:p-10 bg-red-50 rounded-2xl border border-red-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center text-3xl shrink-0">🤔</div>
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="font-semibold text-[16px] text-gray-900 mb-1">Not sure what fits your van?</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">Call us and our team will recommend the perfect setup for your trade and vehicle — free advice, no pressure.</p>
-            </div>
-            <Link href="/contact#enquiry" className="btn-grad shrink-0 text-[13px] py-3 px-5 w-full md:w-auto justify-center">
-              <Phone size={14} /> Call Us Free
-            </Link>
-          </div>
-
         </GSAPStagger>
+
+        {/* Helper card — always full-width below the scroll area */}
+        <div className="mt-4 flex flex-col md:flex-row items-center gap-6 p-6 sm:p-7 md:p-10 bg-red-50 rounded-2xl border border-red-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center text-3xl shrink-0">🤔</div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="font-semibold text-[16px] text-gray-900 mb-1">Not sure what fits your van?</h3>
+            <p className="text-[13px] text-gray-500 leading-relaxed">Call us and our team will recommend the perfect setup for your trade and vehicle — free advice, no pressure.</p>
+          </div>
+          <Link href="/contact#enquiry" className="btn-grad shrink-0 text-[13px] py-3 px-5 w-full md:w-auto justify-center">
+            <Phone size={14} /> Call Us Free
+          </Link>
+        </div>
 
       </div>
     </section>

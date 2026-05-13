@@ -177,3 +177,7 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(220,38,38
 ::-webkit-scrollbar-track { background: #F5F5F5; }
 ::-webkit-scrollbar-thumb { background: #D4D4D4; border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: #AAAAAA; }
+
+/* ─────────────── NO-SCROLLBAR (horizontal scroll strips) ─────────────── */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; scroll-snap-type: x mandatory; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
