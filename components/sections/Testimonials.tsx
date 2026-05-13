@@ -84,7 +84,7 @@ export default function Testimonials() {
             {rest.map(t => (
               <div
                 key={t.name}
-                style={{ scrollSnapAlign: 'start', width: 'min(75vw, 290px)' }}
+                style={{ scrollSnapAlign: 'center', width: 'calc(100vw - 56px)' }}
                 className="flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
               >
                 <Stars count={t.stars} />

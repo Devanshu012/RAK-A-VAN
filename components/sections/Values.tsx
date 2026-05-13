@@ -31,7 +31,7 @@ export default function Values() {
             {VALUES.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                style={{ scrollSnapAlign: 'start', width: 'min(60vw, 220px)' }}
+                style={{ scrollSnapAlign: 'center', width: 'calc(100vw - 56px)' }}
                 className="group flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
               >
                 <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">

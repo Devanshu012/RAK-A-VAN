@@ -77,7 +77,7 @@ export default function Products() {
               <Link
                 key={p.title}
                 href={p.href}
-                style={{ scrollSnapAlign: 'start', width: 'min(72vw, 280px)' }}
+                style={{ scrollSnapAlign: 'center', width: 'calc(100vw - 56px)' }}
                 className="group flex flex-col bg-white rounded-2xl border border-[#EAEAEA] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0"
               >
                 {/* Image */}

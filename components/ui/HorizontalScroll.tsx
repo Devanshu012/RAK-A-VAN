@@ -38,7 +38,7 @@ export default function HorizontalScroll({ children }: Props) {
   return (
     <div className="relative -mx-5">
       {/* ── scroll track ── */}
-      <div ref={ref} className="overflow-x-auto no-scrollbar px-5 pb-3">
+      <div ref={ref} className="overflow-x-auto no-scrollbar px-7 pb-3">
         <div className="flex gap-3 w-max">
           {children}
         </div>
