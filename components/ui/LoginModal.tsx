@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { X, Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
@@ -28,9 +29,9 @@ export default function LoginModal({ onClose }: Props) {
     console.log({ email, password })
   }
 
-  return (
+  const modal = (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -100,4 +101,6 @@ export default function LoginModal({ onClose }: Props) {
       </div>
     </div>
   )
+
+  return createPortal(modal, document.body)
 }
