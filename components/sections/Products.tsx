@@ -4,6 +4,7 @@ import { ArrowUpRight, Phone, Plus, Mail, MapPin } from 'lucide-react'
 import GSAPReveal from '@/components/ui/GSAPReveal'
 import GSAPStagger from '@/components/ui/GSAPStagger'
 import EnquiryForm from '@/components/ui/EnquiryForm'
+import HorizontalScroll from '@/components/ui/HorizontalScroll'
 
 const PRODUCTS = [
   {
@@ -70,13 +71,13 @@ export default function Products() {
         </GSAPReveal>
 
         {/* ── Mobile: horizontal scroll  |  md+: vertical stack ── */}
-        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
-          <div className="flex flex-row gap-4 w-max">
+        <div className="md:hidden">
+          <HorizontalScroll>
             {PRODUCTS.map(p => (
               <Link
                 key={p.title}
                 href={p.href}
-                style={{ scrollSnapAlign: 'start', width: 'min(78vw, 320px)' }}
+                style={{ scrollSnapAlign: 'start', width: 'min(72vw, 280px)' }}
                 className="group flex flex-col bg-white rounded-2xl border border-[#EAEAEA] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex-shrink-0"
               >
                 {/* Image */}
@@ -116,7 +117,7 @@ export default function Products() {
                 </div>
               </Link>
             ))}
-          </div>
+          </HorizontalScroll>
         </div>
 
         {/* ── md+: original vertical stack ── */}

@@ -1,6 +1,7 @@
 import { Award, Wrench, Zap, Shield, Truck, Users } from 'lucide-react'
 import GSAPReveal from '@/components/ui/GSAPReveal'
 import GSAPStagger from '@/components/ui/GSAPStagger'
+import HorizontalScroll from '@/components/ui/HorizontalScroll'
 
 const VALUES = [
   { Icon: Award,  title: 'Industry Pioneer',      desc: "Australia's first van shelving company since 2012 — setting the standard for the entire trade storage industry." },
@@ -25,12 +26,12 @@ export default function Values() {
         </GSAPReveal>
 
         {/* Mobile: horizontal scroll */}
-        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
-          <div className="flex flex-row gap-4 w-max">
+        <div className="md:hidden">
+          <HorizontalScroll>
             {VALUES.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                style={{ scrollSnapAlign: 'start', width: 'min(72vw, 260px)' }}
+                style={{ scrollSnapAlign: 'start', width: 'min(60vw, 220px)' }}
                 className="group flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
               >
                 <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
@@ -42,7 +43,7 @@ export default function Values() {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
         </div>
 
         {/* md+: original grid */}

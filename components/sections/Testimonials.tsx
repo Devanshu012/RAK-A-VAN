@@ -1,6 +1,7 @@
 import { Star } from 'lucide-react'
 import GSAPReveal from '@/components/ui/GSAPReveal'
 import GSAPStagger from '@/components/ui/GSAPStagger'
+import HorizontalScroll from '@/components/ui/HorizontalScroll'
 
 const TESTIMONIALS = [
   { name: 'John R.',   company: 'Response Electrical', trade: 'Electrician',     stars: 5, initials: 'JR', bg: '#FFF7ED', color: '#C2410C',
@@ -78,12 +79,12 @@ export default function Testimonials() {
         </GSAPReveal>
 
         {/* Mobile: horizontal scroll */}
-        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
-          <div className="flex flex-row gap-4 w-max">
+        <div className="md:hidden">
+          <HorizontalScroll>
             {rest.map(t => (
               <div
                 key={t.name}
-                style={{ scrollSnapAlign: 'start', width: 'min(78vw, 300px)' }}
+                style={{ scrollSnapAlign: 'start', width: 'min(75vw, 290px)' }}
                 className="flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
               >
                 <Stars count={t.stars} />
@@ -103,7 +104,7 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
         </div>
 
         {/* md+: original grid */}
