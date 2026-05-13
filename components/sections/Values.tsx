@@ -24,7 +24,29 @@ export default function Values() {
           </div>
         </GSAPReveal>
 
-        <GSAPStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.1}>
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
+          <div className="flex flex-row gap-4 w-max">
+            {VALUES.map(({ Icon, title, desc }) => (
+              <div
+                key={title}
+                style={{ scrollSnapAlign: 'start', width: 'min(72vw, 260px)' }}
+                className="group flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
+                  <Icon size={17} className="text-red-500" strokeWidth={1.75} />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-semibold text-[14px] text-gray-900">{title}</h3>
+                  <p className="text-[12px] text-gray-500 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* md+: original grid */}
+        <GSAPStagger className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.1}>
           {VALUES.map(({ Icon, title, desc }) => (
             <div key={title}
               className="group flex flex-col gap-4 p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">

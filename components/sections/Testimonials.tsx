@@ -77,8 +77,37 @@ export default function Testimonials() {
           </div>
         </GSAPReveal>
 
-        {/* Grid of remaining */}
-        <GSAPStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.1}>
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-5 px-5 overflow-x-auto no-scrollbar pb-2">
+          <div className="flex flex-row gap-4 w-max">
+            {rest.map(t => (
+              <div
+                key={t.name}
+                style={{ scrollSnapAlign: 'start', width: 'min(78vw, 300px)' }}
+                className="flex flex-col gap-4 p-5 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm flex-shrink-0"
+              >
+                <Stars count={t.stars} />
+                <p className="text-[12px] text-gray-500 leading-relaxed italic flex-1">&ldquo;{t.text}&rdquo;</p>
+                <div className="flex items-center gap-2.5 pt-3 border-t border-[#F5F5F5]">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-[11px] shrink-0"
+                    style={{ background: t.bg, color: t.color }}>
+                    {t.initials}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-[12px] text-gray-900">{t.name}</p>
+                    <p className="text-[10px] text-gray-400 truncate">{t.company}</p>
+                  </div>
+                  <span className="ml-auto shrink-0 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-100">
+                    {t.trade}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* md+: original grid */}
+        <GSAPStagger className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.1}>
           {rest.map(t => (
             <div key={t.name}
               className="flex flex-col gap-4 p-6 bg-white rounded-2xl border border-[#EAEAEA] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
