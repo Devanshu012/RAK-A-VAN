@@ -11,12 +11,35 @@ export default function SignUpPage() {
   const [confirm, setConfirm]   = useState('')
   const [showPw, setShowPw]     = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (password !== confirm) return alert('Passwords do not match')
-    // TODO: wire up auth
-    console.log({ name, email, password })
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  if (password !== confirm) {
+    return alert('Passwords do not match')
   }
+
+  try {
+    const res = await fetch('https://rakvanbackend.onrender.com/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, password }),
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      alert(data.message || 'Signup failed')
+      return
+    }
+
+    alert('Account created successfully')
+    window.location.href = '/'
+  } catch (error) {
+    alert('Something went wrong')
+  }
+}
 
   return (
     <main className="min-h-screen bg-[#FAFAF9] flex items-center justify-center px-4 py-16">

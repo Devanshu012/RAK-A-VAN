@@ -9,9 +9,9 @@ interface Props {
 }
 
 export default function LoginModal({ onClose }: Props) {
-  const [email, setEmail]       = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [showPw, setShowPw]     = useState(false)
+  const [showPw, setShowPw] = useState(false)
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
@@ -23,10 +23,33 @@ export default function LoginModal({ onClose }: Props) {
     }
   }, [onClose])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: wire up auth
-    console.log({ email, password })
+
+    try {
+      const res = await fetch('https://rakvanbackend.onrender.com/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        alert(data.message || 'Login failed')
+        return
+      }
+
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
+      window.location.reload()
+      alert('Login successful')
+      onClose()
+    } catch (error) {
+      alert('Something went wrong')
+    }
   }
 
   const modal = (

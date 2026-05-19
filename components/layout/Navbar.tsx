@@ -15,22 +15,22 @@ const MEGA_COLUMNS = [
     heading: 'Trade Kits',
     href: '/shop/trade-kits',
     items: [
-      { label: 'General Services',  href: '/shop/trade-kits/general-services' },
-      { label: 'Builders',          href: '/shop/trade-kits/builders' },
-      { label: 'Electricians',      href: '/shop/trade-kits/electricians' },
-      { label: 'Plumbers',          href: '/shop/trade-kits/plumbers' },
-      { label: 'Painters',          href: '/shop/trade-kits/painters' },
-      { label: 'Strata Cleaning',   href: '/shop/trade-kits/strata-cleaning' },
+      { label: 'General Services', href: '/shop/trade-kits/general-services' },
+      { label: 'Builders', href: '/shop/trade-kits/builders' },
+      { label: 'Electricians', href: '/shop/trade-kits/electricians' },
+      { label: 'Plumbers', href: '/shop/trade-kits/plumbers' },
+      { label: 'Painters', href: '/shop/trade-kits/painters' },
+      { label: 'Strata Cleaning', href: '/shop/trade-kits/strata-cleaning' },
     ],
   },
   {
     heading: 'Frames',
     href: '/shop/frames',
     items: [
-      { label: '420mm Frame Kits',              href: '/shop/frames/420mm' },
-      { label: '830mm Frame Kits',              href: '/shop/frames/830mm' },
-      { label: '1040mm Frame Kits',             href: '/shop/frames/1040mm' },
-      { label: 'Double Frame Kits',             href: '/shop/frames/double' },
+      { label: '420mm Frame Kits', href: '/shop/frames/420mm' },
+      { label: '830mm Frame Kits', href: '/shop/frames/830mm' },
+      { label: '1040mm Frame Kits', href: '/shop/frames/1040mm' },
+      { label: 'Double Frame Kits', href: '/shop/frames/double' },
       { label: 'Fixing Kits/Brackets/Components', href: '/shop/frames/fixing-kits' },
     ],
   },
@@ -39,21 +39,21 @@ const MEGA_COLUMNS = [
     href: '/shop/accessories',
     items: [
       { label: 'Aluminium Folding Ramp', href: '/shop/accessories/ramp' },
-      { label: 'Vapour Barriers',        href: '/shop/accessories/vapour-barriers' },
-      { label: 'Cable Trays',            href: '/shop/accessories/cable-trays' },
-      { label: 'Plastic Bins',           href: '/shop/accessories/plastic-bins' },
-      { label: 'Shelf Trays',            href: '/shop/accessories/shelf-trays' },
-      { label: 'Spare Parts Trays',      href: '/shop/accessories/spare-parts-trays' },
-      { label: 'Accessories',            href: '/shop/accessories' },
+      { label: 'Vapour Barriers', href: '/shop/accessories/vapour-barriers' },
+      { label: 'Cable Trays', href: '/shop/accessories/cable-trays' },
+      { label: 'Plastic Bins', href: '/shop/accessories/plastic-bins' },
+      { label: 'Shelf Trays', href: '/shop/accessories/shelf-trays' },
+      { label: 'Spare Parts Trays', href: '/shop/accessories/spare-parts-trays' },
+      { label: 'Accessories', href: '/shop/accessories' },
     ],
   },
   {
     heading: 'StorageTek',
     href: '/shop/storagetek',
     items: [
-      { label: 'ABS Cases',                       href: '/shop/storagetek/abs-cases' },
-      { label: 'Cabinets',                        href: '/shop/storagetek/cabinets' },
-      { label: 'Case Frames',                     href: '/shop/storagetek/case-frames' },
+      { label: 'ABS Cases', href: '/shop/storagetek/abs-cases' },
+      { label: 'Cabinets', href: '/shop/storagetek/cabinets' },
+      { label: 'Case Frames', href: '/shop/storagetek/case-frames' },
       { label: 'Stackable Bins and Louvered Panels', href: '/shop/storagetek/louvered-panels' },
     ],
   },
@@ -61,37 +61,46 @@ const MEGA_COLUMNS = [
 
 /* ─── Simple nav links (no mega) ─────────────────────────────────── */
 const NAV_LINKS = [
-  { label: 'About',        href: '/about' },
+  { label: 'About', href: '/about' },
   { label: 'Distributors', href: '/distributors' },
-  { label: 'Contact',      href: '/contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 /* ─── Search data ────────────────────────────────────────────────── */
 const SEARCH_PRODUCTS = [
-  { title: 'Frame Kits',          tags: ['420mm', '830mm', '1040mm', 'Double Frames'],             href: '/shop/frames' },
-  { title: 'Bins & Accessories',  tags: ['Plastic Bins', 'Shelf Trays', 'Cable Trays', 'Ramps'],  href: '/shop/accessories' },
-  { title: 'StorageTek',          tags: ['ABS Cases', 'Cabinets', 'Case Frames', 'Louvered Panels'], href: '/shop/storagetek' },
-  { title: 'Vapour Barriers',     tags: ['Protection', 'Custom Fit', 'Van Interior'],              href: '/shop/accessories/vapour-barriers' },
-  { title: 'Trade Kits',          tags: ['Electricians', 'Builders', 'Plumbers', 'Painters'],      href: '/shop/trade-kits' },
+  { title: 'Frame Kits', tags: ['420mm', '830mm', '1040mm', 'Double Frames'], href: '/shop/frames' },
+  { title: 'Bins & Accessories', tags: ['Plastic Bins', 'Shelf Trays', 'Cable Trays', 'Ramps'], href: '/shop/accessories' },
+  { title: 'StorageTek', tags: ['ABS Cases', 'Cabinets', 'Case Frames', 'Louvered Panels'], href: '/shop/storagetek' },
+  { title: 'Vapour Barriers', tags: ['Protection', 'Custom Fit', 'Van Interior'], href: '/shop/accessories/vapour-barriers' },
+  { title: 'Trade Kits', tags: ['Electricians', 'Builders', 'Plumbers', 'Painters'], href: '/shop/trade-kits' },
 ]
 
-export default function Navbar() {
-  const headerRef  = useRef<HTMLElement>(null)
-  const searchRef  = useRef<HTMLInputElement>(null)
-  const megaRef    = useRef<HTMLDivElement>(null)
 
-  const [open, setOpen]             = useState(false)
-  const [megaOpen, setMegaOpen]     = useState(false)
+export default function Navbar() {
+  const headerRef = useRef<HTMLElement>(null)
+  const searchRef = useRef<HTMLInputElement>(null)
+  const megaRef = useRef<HTMLDivElement>(null)
+
+  const [open, setOpen] = useState(false)
+  const [megaOpen, setMegaOpen] = useState(false)
   const [mobileRange, setMobileRange] = useState(false)
-  const [loginOpen, setLoginOpen]   = useState(false)
+  const [loginOpen, setLoginOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [user, setUser] = useState<any>(null)
+useEffect(() => {
+  const storedUser = localStorage.getItem('user')
+
+  if (storedUser) {
+    setUser(JSON.parse(storedUser))
+  }
+}, [])
 
   const searchResults = searchQuery.trim().length > 0
     ? SEARCH_PRODUCTS.filter(p =>
-        p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
-      )
+      p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
+    )
     : []
 
   function toggleSearch() {
@@ -154,9 +163,8 @@ export default function Navbar() {
           >
             <Link
               href="/shop"
-              className={`flex items-center gap-1 px-3.5 py-2 text-[14px] rounded-full transition-colors font-medium ${
-                megaOpen ? 'text-red-600 bg-red-50' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F5F5F5]'
-              }`}
+              className={`flex items-center gap-1 px-3.5 py-2 text-[14px] rounded-full transition-colors font-medium ${megaOpen ? 'text-red-600 bg-red-50' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F5F5F5]'
+                }`}
             >
               Our Range
               <ChevronDown size={13} className={`transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`} />
@@ -187,11 +195,20 @@ export default function Navbar() {
             className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-900 transition-colors font-medium">
             <Phone size={13} /> 1300 044 145
           </a>
-          <button
-            onClick={() => setLoginOpen(true)}
-            className="flex items-center gap-1.5 text-[13px] text-gray-600 border border-[#EAEAEA] rounded-full px-4 py-2 hover:bg-[#F5F5F5] hover:border-gray-300 transition-all font-medium">
-            <User size={13} /> Sign In
-          </button>
+          {user ? (
+            <div className="flex items-center gap-2 border border-[#EAEAEA] rounded-full px-4 py-2">
+              <User size={13} />
+              <span className="text-[13px] font-medium">
+                {user.name}
+              </span>
+            </div>
+          ) : (
+            <button
+              onClick={() => setLoginOpen(true)}
+              className="flex items-center gap-1.5 text-[13px] text-gray-600 border border-[#EAEAEA] rounded-full px-4 py-2 hover:bg-[#F5F5F5] hover:border-gray-300 transition-all font-medium">
+              <User size={13} /> Sign In
+            </button>
+          )}
           <Link href="/shop" className="btn-grad text-[13px] py-2.5 px-5">
             Shop Now
           </Link>
@@ -354,10 +371,18 @@ export default function Navbar() {
             <Link href="/shop" onClick={() => setOpen(false)} className="btn-grad mt-3 justify-center">
               Shop Now
             </Link>
-            <button onClick={() => { setOpen(false); setLoginOpen(true) }}
-              className="flex items-center justify-center gap-2 border border-[#EAEAEA] rounded-full py-2.5 text-[14px] text-gray-600 hover:bg-[#F5F5F5] transition-colors mt-1">
-              <User size={14} /> Sign In
-            </button>
+            {user ? (
+              <div className="flex items-center justify-center gap-2 border border-[#EAEAEA] rounded-full py-2.5 text-[14px] text-gray-700 mt-1">
+                <User size={14} />
+                {user.name}
+              </div>
+            ) : (
+              <button
+                onClick={() => { setOpen(false); setLoginOpen(true) }}
+                className="flex items-center justify-center gap-2 border border-[#EAEAEA] rounded-full py-2.5 text-[14px] text-gray-600 hover:bg-[#F5F5F5] transition-colors mt-1">
+                <User size={14} /> Sign In
+              </button>
+            )}
           </nav>
         </div>
       )}
