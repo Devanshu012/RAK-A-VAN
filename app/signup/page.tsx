@@ -12,34 +12,32 @@ export default function SignUpPage() {
   const [showPw, setShowPw]     = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  if (password !== confirm) {
-    return alert('Passwords do not match')
-  }
-
-  try {
-    const res = await fetch('https://rakvanbackend.onrender.com/api/auth/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, password }),
-    })
-
-    const data = await res.json()
-
-    if (!res.ok) {
-      alert(data.message || 'Signup failed')
-      return
+    if (password !== confirm) {
+      return alert('Passwords do not match')
     }
 
-    alert('Account created successfully')
-    window.location.href = '/'
-  } catch (error) {
-    alert('Something went wrong')
+    try {
+      const res = await fetch('https://rakvanbackend.onrender.com/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        alert(data.message || 'Signup failed')
+        return
+      }
+
+      alert('Account created successfully')
+      window.location.href = '/'
+    } catch (error: unknown) {
+      alert('Something went wrong')
+    }
   }
-}
 
   return (
     <main className="min-h-screen bg-[#FAFAF9] flex items-center justify-center px-4 py-16">

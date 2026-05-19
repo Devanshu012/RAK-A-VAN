@@ -12,6 +12,7 @@ export default function LoginModal({ onClose }: Props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
@@ -25,13 +26,11 @@ export default function LoginModal({ onClose }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
+    setLoading(true)
     try {
       const res = await fetch('https://rakvanbackend.onrender.com/api/auth/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       })
 
@@ -44,11 +43,12 @@ export default function LoginModal({ onClose }: Props) {
 
       localStorage.setItem('token', data.token)
       localStorage.setItem('user', JSON.stringify(data.user))
-      window.location.reload()
-      alert('Login successful')
       onClose()
-    } catch (error) {
+      window.location.reload()
+    } catch (error: unknown) {
       alert('Something went wrong')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -110,8 +110,8 @@ export default function LoginModal({ onClose }: Props) {
             <a href="#" className="text-[13px] text-c-accent hover:underline">Forgot password?</a>
           </div>
 
-          <button type="submit" className="btn-primary justify-center py-3 text-[14px] mt-1">
-            Sign In
+          <button type="submit" disabled={loading} className="btn-primary justify-center py-3 text-[14px] mt-1 disabled:opacity-60 disabled:cursor-not-allowed">
+            {loading ? 'Signing in…' : 'Sign In'}
           </button>
         </form>
 

@@ -76,6 +76,11 @@ const SEARCH_PRODUCTS = [
 ]
 
 
+interface NavUser {
+  name: string
+  email: string
+}
+
 export default function Navbar() {
   const headerRef = useRef<HTMLElement>(null)
   const searchRef = useRef<HTMLInputElement>(null)
@@ -87,14 +92,16 @@ export default function Navbar() {
   const [loginOpen, setLoginOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [user, setUser] = useState<any>(null)
-useEffect(() => {
-  const storedUser = localStorage.getItem('user')
+  const [user, setUser] = useState<NavUser | null>(null)
 
-  if (storedUser) {
-    setUser(JSON.parse(storedUser))
-  }
-}, [])
+  useEffect(() => {
+    try {
+      const storedUser = localStorage.getItem('user')
+      if (storedUser) setUser(JSON.parse(storedUser))
+    } catch {
+      localStorage.removeItem('user')
+    }
+  }, [])
 
   const searchResults = searchQuery.trim().length > 0
     ? SEARCH_PRODUCTS.filter(p =>
